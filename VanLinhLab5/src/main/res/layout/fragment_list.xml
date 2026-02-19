@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#FFEBCD"
-    tools:context=".ListFragment">
+    tools:context=".ListFragmentSmith">
 
     <ListView
         android:id="@+id/listView1"
