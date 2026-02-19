@@ -1,5 +1,4 @@
 package john.smith.fragmentlab5;
-
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
