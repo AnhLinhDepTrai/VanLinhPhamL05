@@ -1,3 +1,6 @@
+/** Author's Name: Van Linh Pham
+ * Student's ID: N01681546
+ * */
 package john.smith.fragmentlab5;
 
 import android.os.Bundle;
@@ -91,7 +94,7 @@ public class ListFragmentSmith extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_list, container, false);
-        listView = view.findViewById(R.id.listView1); // Initialize listView
+        listView = view.findViewById(R.id.VanLinhlistView1); // Initialize listView
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_list_item_1, concepts);

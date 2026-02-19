@@ -7,7 +7,7 @@
     tools:context=".VanLinhActivity5">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
+        android:id="@+id/VanLinhfragmentContainerView"
         android:name="john.smith.fragmentlab5.ListFragmentSmith"
         android:layout_width="179dp"
         android:layout_height="679dp"
@@ -18,7 +18,7 @@
         tools:layout="@layout/fragment_list" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView2"
+        android:id="@+id/VanLinhfragmentContainerView2"
         android:name="john.smith.fragmentlab5.DefinitionFragmentJohn"
         android:layout_width="188dp"
         android:layout_height="679dp"
