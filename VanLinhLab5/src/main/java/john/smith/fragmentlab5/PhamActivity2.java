@@ -16,31 +16,31 @@ public class PhamActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activityy_pham);
 
-        // Show back arrow on ActionBar
+
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle("Select Date");
+            getSupportActionBar().setTitle(R.string.select_date);
         }
 
         tvFullName = findViewById(R.id.tvFullNameSecond);
         datePicker = findViewById(R.id.datePicker);
 
-        // Set initial text
-        tvFullName.setText("Van Linh Pham");
 
-        // Listener to update TextView when date changes
+        tvFullName.setText(R.string.van_linh_pam);
+
+
         datePicker.init(
                 Calendar.getInstance().get(Calendar.YEAR),
                 Calendar.getInstance().get(Calendar.MONTH),
                 Calendar.getInstance().get(Calendar.DAY_OF_MONTH),
                 (view, year, monthOfYear, dayOfMonth) -> {
                     String date = (monthOfYear + 1) + "/" + dayOfMonth + "/" + year;
-                    tvFullName.setText("Van Linh Pham\nSelected Date: " + date);
+                    tvFullName.setText(getString(R.string.van_linh_pham_selected_date) + date);
                 }
         );
     }
 
-    // Handle back arrow click
+
     @Override
     public boolean onSupportNavigateUp() {
         finish(); // close this activity and go back

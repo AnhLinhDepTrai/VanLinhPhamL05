@@ -31,4 +31,7 @@
     <string name="N">No</string>
     <string name="mes1">" must implement OnItemSelectedListener"</string>
     <string name="thenumber">tel:1234567890</string>
+    <string name="select_date">Select Date</string>
+    <string name="van_linh_pam">Van Linh Pam</string>
+    <string name="van_linh_pham_selected_date">"Van Linh Pham\nSelected Date: "</string>
 </resources>
