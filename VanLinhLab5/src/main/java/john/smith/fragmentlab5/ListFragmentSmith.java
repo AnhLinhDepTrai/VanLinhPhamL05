@@ -1,3 +1,5 @@
+//Van Linh Pham
+//N01681546
 package john.smith.fragmentlab5;
 
 import android.content.Context;
