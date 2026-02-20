@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="john.smith.fragmentlab5">
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -12,15 +14,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FragmentLab5"
         tools:targetApi="31">
+
+        <!-- Main / Launcher Activity -->
         <activity
             android:name=".VanLinhActivity5"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Second Activity -->
+        <activity
+            android:name=".PhamActivity2"
+            android:exported="false" />
+
     </application>
 
 </manifest>

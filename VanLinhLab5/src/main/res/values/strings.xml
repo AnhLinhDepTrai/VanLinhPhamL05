@@ -23,4 +23,12 @@
     <string name="component">Application component that provides a screen</string>
     <string name="mini">A mini activity</string>
     <string name="callmethod">These methods are called when .....</string>
+    <string name="denied">Van Linh Pham: Permission Denied</string>
+    <string name="imagecap">android.media.action.IMAGE_CAPTURE</string>
+    <string name="farlab5">Fragment Lab 5</string>
+    <string name="exit">Do you want to exit the app?</string>
+    <string name="Y">Yes</string>
+    <string name="N">No</string>
+    <string name="mes1">" must implement OnItemSelectedListener"</string>
+    <string name="thenumber">tel:1234567890</string>
 </resources>

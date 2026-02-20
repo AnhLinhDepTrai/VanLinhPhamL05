@@ -48,7 +48,7 @@ public class ListFragmentSmith extends Fragment {
             listener = (OnItemSelectedListener) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement OnItemSelectedListener");
+                    + getString(R.string.mes1));
         }
     }
 
