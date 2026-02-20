@@ -19,19 +19,19 @@ public class ListFragmentSmith extends Fragment {
     private ListView listView;
 
     String[] concepts = new String[]
-            {"Android", "ART", "AVD", "Intent", "AOT",
-                    "Emulator", "Activity", "Fragment", "Life Cycle events"};
+            {getString(R.string.and), getString(R.string.art), getString(R.string.avd), getString(R.string.inten), getString(R.string.aot),
+                    getString(R.string.emu), getString(R.string.act), getString(R.string.frag), getString(R.string.cycle)};
 
     String[] definition = new String[]
-            {"Open source software stack",
-                    "Android Runtime Environment",
-                    "Android Virtual Device",
-                    "An abstract description of an operation to be performed",
-                    "Ahead of Time compilation",
-                    "Simulates Android devices on your computer",
-                    "Application component that provides a screen",
-                    "A mini activity",
-                    "These methods are called when ....."};
+            {getString(R.string.opensoruce),
+                    getString(R.string.runenv),
+                    getString(R.string.virtul),
+                    getString(R.string.an_abstract_description_of_an_operation_to_be_performed),
+                    getString(R.string.complition),
+                    getString(R.string.simulattingkwergnrlign),
+                    getString(R.string.component),
+                    getString(R.string.mini),
+                    getString(R.string.callmethod)};
 
 
     private static final String ARG_PARAM1 = "param1";
@@ -69,7 +69,7 @@ public class ListFragmentSmith extends Fragment {
             listener = (OnItemSelectedListener) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement OnItemSelectedListener");
+                    + getString(R.string.exceptionOnattach));
         }
     }
 

@@ -4,4 +4,23 @@
     <string name="app_name">FragmentLab5</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="exceptionOnattach">" must implement OnItemSelectedListener"</string>
+    <string name="and">Android</string>
+    <string name="art">ART</string>
+    <string name="avd">AVD</string>
+    <string name="inten">Intent</string>
+    <string name="aot">AOT</string>
+    <string name="emu">Emulator</string>
+    <string name="act">Activity</string>
+    <string name="frag">Fragment</string>
+    <string name="cycle">Life Cycle events</string>
+    <string name="opensoruce">Open source software stack</string>
+    <string name="runenv">Android Runtime Environment</string>
+    <string name="virtul">Android Virtual Device</string>
+    <string name="an_abstract_description_of_an_operation_to_be_performed">An abstract description of an operation to be performed</string>
+    <string name="complition">Ahead of Time compilation</string>
+    <string name="simulattingkwergnrlign">Simulates Android devices on your computer</string>
+    <string name="component">Application component that provides a screen</string>
+    <string name="mini">A mini activity</string>
+    <string name="callmethod">These methods are called when .....</string>
 </resources>
