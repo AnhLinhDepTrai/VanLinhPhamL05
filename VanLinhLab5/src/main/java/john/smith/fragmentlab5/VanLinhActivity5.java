@@ -1,22 +1,39 @@
-/** Author's Name: Van Linh Pham
- * Student's ID: N01681546
- * */
 package john.smith.fragmentlab5;
 
 import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
-public class VanLinhActivity5 extends AppCompatActivity {
+public class VanLinhActivity5 extends AppCompatActivity implements ListFragmentSmith.OnItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.layout.activity_main), (v, insets) -> {
-//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-//            return insets;
-//        });
+
+
+        if (savedInstanceState == null) {
+
+            ListFragmentSmith listFragment = ListFragmentSmith.newInstance("", "");
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.VanLinhfragmentContainerView, listFragment);
+            ft.commit();
+
+
+            DefinitionFragmentJohn definitionFragment = DefinitionFragmentJohn.newInstance("", "");
+            FragmentTransaction ft2 = getSupportFragmentManager().beginTransaction();
+            ft2.replace(R.id.VanLinhfragmentContainerView2, definitionFragment);
+            ft2.commit();
+        }
+    }
+
+
+    @Override
+    public void onItemSelected(String definitionText) {
+        DefinitionFragmentJohn definitionFragment = DefinitionFragmentJohn.newInstance(definitionText, "");
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.VanLinhfragmentContainerView2, definitionFragment);
+        ft.addToBackStack(null);
+        ft.commit();
     }
 }

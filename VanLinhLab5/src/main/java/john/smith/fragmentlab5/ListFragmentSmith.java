@@ -3,39 +3,25 @@
  * */
 package john.smith.fragmentlab5;
 
+import android.content.Context;
 import android.os.Bundle;
-
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AdapterView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ListFragmentSmith#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class ListFragmentSmith extends Fragment {
 
     private ListView listView;
 
     String[] concepts = new String[]
-            {
-                    "Android",
-                    "ART",
-                    "AVD",
-                    "Intent",
-                    "AOT",
-                    "Emulator",
-                    "Activity",
-                    "Fragment",
-                    "Life Cycle events" };
-    //
+            {"Android", "ART", "AVD", "Intent", "AOT",
+                    "Emulator", "Activity", "Fragment", "Life Cycle events"};
+
     String[] definition = new String[]
             {"Open source software stack",
                     "Android Runtime Environment",
@@ -48,29 +34,17 @@ public class ListFragmentSmith extends Fragment {
                     "These methods are called when ....."};
 
 
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
     public ListFragmentSmith() {
-        // Required empty public constructor
+
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ListFragment.
-     */
-    // TODO: Rename and change types and number of parameters
+
     public static ListFragmentSmith newInstance(String param1, String param2) {
         ListFragmentSmith fragment = new ListFragmentSmith();
         Bundle args = new Bundle();
@@ -78,6 +52,25 @@ public class ListFragmentSmith extends Fragment {
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
+    }
+
+
+    public interface OnItemSelectedListener {
+        void onItemSelected(String definitionText);
+    }
+
+    private OnItemSelectedListener listener;
+
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if (context instanceof OnItemSelectedListener) {
+            listener = (OnItemSelectedListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnItemSelectedListener");
+        }
     }
 
     @Override
@@ -92,22 +85,23 @@ public class ListFragmentSmith extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_list, container, false);
-        listView = view.findViewById(R.id.VanLinhlistView1); // Initialize listView
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
+        View view = inflater.inflate(R.layout.fragment_list, container, false);
+        listView = view.findViewById(R.id.VanLinhlistView1);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
                 android.R.layout.simple_list_item_1, concepts);
-        //bind the list view with array adapter
         listView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
-            @Override public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
-            {
-                listView.setSelector(android.R.color.holo_blue_dark);
+
+        listView.setOnItemClickListener((parent, v, position, id) -> {
+            listView.setSelector(android.R.color.holo_blue_dark);
+
+            if (listener != null) {
+                listener.onItemSelected(definition[position]); // send the corresponding definition
             }
         });
+
         return view;
     }
 }
